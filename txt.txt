@@ -9,5 +9,16 @@
 > {project} {command}
 
 > update list
+send saved version list to client
+
 > update refresh
+refresh saved version list from github
+send changes to client
+
 > update {version}
+notify the client to connect again in some time
+check if version is on version list
+download selected version from github
+move current version to backup
+move new version to current
+restart server

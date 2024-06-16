@@ -27,8 +27,8 @@ if __name__ == "__main__":
         if not command:
             continue
 
-        if command == "stop":
-            break
+        if command.split()[0] in ["stop", "update"]:
+            send_command(client_socket, command)
 
         parts = command.split()
         cmd = parts[0]
@@ -36,5 +36,4 @@ if __name__ == "__main__":
         result = send_command(client_socket, cmd, args)
         print(result)
 
-    send_command(client_socket, "stop")
     client_socket.close()

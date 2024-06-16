@@ -1,4 +1,6 @@
-# commands.py
+import subprocess
+
+
 def echo(args: list[str]) -> str:
     """Echoes the input"""
     return " ".join(args)
@@ -35,6 +37,14 @@ def history(args: list[str]) -> str:
         case _:
             return "Unknown subcommand"
 
+def update(args: list[str]) -> str:
+    """Updates from github"""
+    if len(args) == 1:
+        py_path = r"C:\Users\danil\Documents\Dev\DelNet\.venv\Scripts\python.exe"
+        subprocess.Popen([py_path, "update.py", args[0]])
+        return "STOP"
+    return "Usage: update <version>"
+
 
 COMMANDS = {
     "echo": echo,
@@ -42,4 +52,8 @@ COMMANDS = {
     "help": c_help,
     "stop": stop,
     "history": history,
+    "update": update,
 }
+
+
+# ORIGINAL
