@@ -1,0 +1,13 @@
+###### TODO
+
+> projects
+
+> start {project} {arguments}
+
+> edit {project} {settings}
+
+> {project} {command}
+
+> update list
+> update refresh
+> update {version}
